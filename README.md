@@ -98,7 +98,9 @@ def onehot_to_label_idxmax(df):
 
 df = onehot_to_label_idxmax(df)
 
-Step 4:
+**Soil Type Column Conversion**
+
+This function converts 40 one-hot encoded soil type columns into a single column. It finds the active soil type in each row and keeps only that as a label. The original 40 columns are dropped to simplify the dataset. This makes the data easier to use for machine learning models. The updated DataFrame replaces the original one.
 
 
 le = LabelEncoder()
@@ -107,7 +109,6 @@ df['Wilderness_Area'] = le.fit_transform(df['Wilderness_Area'])
 
 df['Soil_Type'] = le.fit_transform(df['Soil_Type'])
 
-Step 5:
 
 from sklearn.model_selection import train_test_split
 
@@ -127,7 +128,9 @@ plt.tight_layout()
 
 plt.show()
 
-Step 6:
+
+
+
 
 import pandas as pd
 
