@@ -69,13 +69,12 @@ Step3 :
 def onehot_to_label_idxmax(df):
 
 	df = df.copy()
-    
+	
 	cols = ['Wilderness_Area1', 'Wilderness_Area2',
-    
+	
 			'Wilderness_Area3', 'Wilderness_Area4']
-
-    
-	df['Wilderness_Area'] = df[cols].idxmax(axis=1).str.replace('Wilderness_Area', '')
+  
+    df['Wilderness_Area'] = df[cols].idxmax(axis=1).str.replace('Wilderness_Area', '')
     
 	return df.drop(columns=cols)
 
