@@ -1,6 +1,7 @@
 # Forest-Cover-Type-Prediction
 
-step 1
+**Data Preparation and Machine Learning Setup**
+This code sets up the environment for a complete machine learning workflow. It imports essential libraries for data handling, visualization, preprocessing, and modeling. The dataset train.csv is loaded into a DataFrame and displayed for initial inspection. Tools for scaling, encoding, dimensionality reduction, and handling class imbalance are included. Various classification models and evaluation metrics are also prepared for building and assessing predictive models.
 
 import warnings
 
@@ -57,14 +58,18 @@ df = pd.read_csv('/content/train.csv')
 df.head()
 
 
-Step 2:
+**Dataset Overview**
+
+The df.info() shows the dataset’s structure, column types, and missing values. df.describe() provides statistical summaries like mean, min, max, and quartiles for numerical features. Together, they give a quick understanding of data quality and distribution. This helps identify issues and guides preprocessing. It is an essential first step in data analysis.
 
 df.info()
 
 df.describe()
 
 
-Step3 :
+**One-Hot Encoding to Single Label Conversion**
+
+This function `onehot_to_label_idxmax` converts multiple one-hot encoded columns for wilderness areas into a single categorical column. It selects the column with the maximum value for each row using `idxmax()` and extracts the area number. The original one-hot columns are then dropped to simplify the dataset. This reduces dimensionality and makes the data easier to work with for machine learning models. Finally, the transformed DataFrame replaces the original one.
 
 def onehot_to_label_idxmax(df):
 
